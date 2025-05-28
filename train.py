@@ -57,7 +57,7 @@ def test_model(model, test_data_loader, epoch, device, best_mae, save_path, writ
 
             _, _, _, aop_gt, dolp_gt = compute_aop_dop_from_0_45_unopl(M_pol0, M_pol45, M_unpol)
 
-            init_0, init_45, aop_out, dolp_out, _, _ = model(L_pol0, M_unpol, R_pol45)
+            init_0, init_45, aop_out, dolp_out, _, _, _, _ = model(L_pol0, M_unpol, R_pol45)
 
             aop_out = aop_out.clamp(0, 1)
             dolp_out = dolp_out.clamp(0, 1)
